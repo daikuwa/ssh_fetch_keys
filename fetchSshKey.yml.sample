@@ -1,0 +1,29 @@
+connections:
+  -
+    host: "ldap1.example.org"
+    port: 636
+    tls: true
+    starttls: false
+    tls_verify_cert: false
+    ca_cert_path: "/usr/local/etc/openldap/certs/cacerts.pem"
+  -
+    host: "ldap2.example.org"
+    port: 636
+    tls: true
+    starttls: false
+    tls_verify_cert: false
+    ca_cert_path: "/usr/local/etc/openldap/certs/cacerts.pem"
+  -
+    host: "192.0.2.38"
+    port: 389
+    tls: false
+    starttls: false
+    tls_verify_cert: false
+    ca_cert_path: "/usr/local/etc/openldap/certs/cacerts.pem"
+search:
+  public_key_attr: "sshPublicKey"
+  search_base: "ou=people, dc=example, dc=org"
+  uid_attr: "uid"
+  search_filter: "(objectClass=something_for_filter)"
+  bind_dn: "uid=key-fetcher,ou=systems,dc=example,dc=org"
+  bind_passwd: "passsssssswoooooooooood"
